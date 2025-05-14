@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="operatordb.FXMLDocumentController">
+   <effect>
+      <Blend mode="DARKEN" />
+   </effect>
+   <children>
+      <SplitPane dividerPositions="0.30139103554868624" layoutX="-1.0" orientation="VERTICAL" prefHeight="649.0" prefWidth="891.0" style="-fx-background-color: black;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="889.0">
+               <children>
+                  <TextField fx:id="text_id" layoutX="742.0" layoutY="154.0" prefHeight="25.0" prefWidth="111.0" promptText="ID" />
+                  <Label layoutX="659.0" layoutY="157.0" text="Operator ID" textFill="#fbf8be">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="288.0" prefHeight="37.0" prefWidth="314.0" text="OPERATOR DATA" textFill="#fbf8be">
+                     <font>
+                        <Font name="Bodoni MT" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label graphicTextGap="3.0" layoutX="13.0" layoutY="132.0" text="Age" textFill="#fbf8be">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label graphicTextGap="3.0" layoutX="13.0" layoutY="74.0" text="Middle Name" textFill="#fbf8be">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <SplitPane layoutX="727.0" layoutY="33.0" prefHeight="101.0" prefWidth="141.0" style="-fx-background-color: grey;" />
+                  <DatePicker fx:id="text_Birthdate" layoutX="100.0" layoutY="156.0" prefHeight="25.0" prefWidth="119.0" promptText="Date of Birth" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="889.0">
+               <children>
+                  <SplitPane dividerPositions="0.8229988726042841" layoutX="-6.0" layoutY="-2.0" prefHeight="458.0" prefWidth="897.0" style="-fx-background-color: Matte Gray;">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="734.0" style="-fx-background-color: #00a8a8;">
+                           <children>
+                              <TableView fx:id="User" layoutX="3.0" onMouseClicked="#getSelected" prefHeight="405.0" prefWidth="734.0" style="-fx-background-color: #f5fcff;">
+                                <columns>
+                                  <TableColumn fx:id="col_id" prefWidth="57.0" text="Operator_Id" />
+                                  <TableColumn fx:id="TableCol_Lastname" prefWidth="52.0" text="Last Name" />
+                                    <TableColumn fx:id="TableCol_Firstname" prefWidth="39.0" text="First Name" />
+                                    <TableColumn fx:id="TableCol_Middlename" prefWidth="37.0" text="Middle Name" />
+                                    <TableColumn fx:id="TableCol_Phonenumber" prefWidth="40.0" text="Phone Number" />
+                                    <TableColumn fx:id="TableCol_Sex" minWidth="0.0" prefWidth="45.0" text="Sex" />
+                                    <TableColumn fx:id="TableCol_Age" prefWidth="41.0" text="Age" />
+                                    <TableColumn fx:id="TableCol_Birthdate" prefWidth="52.0" text="Birthdate" />
+                                    <TableColumn fx:id="TableCol_Civilstatus" prefWidth="57.0" text="Civil Status" />
+                                    <TableColumn fx:id="TableCol_Housenumber" prefWidth="57.0" text="House Number" />
+                                    <TableColumn fx:id="TableCol_Street" prefWidth="55.0" text="Street" />
+                                    <TableColumn fx:id="TableCol_Baranggay" prefWidth="69.0" text="Baranggay" />
+                                    <TableColumn fx:id="TableCol_City" prefWidth="49.0" text="City" />
+                                    <TableColumn fx:id="TableCol_Province" prefWidth="78.0" text="Province" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="searchBtn" layoutX="71.0" layoutY="415.0" mnemonicParsing="false" onAction="#operatorSearch" prefHeight="25.0" prefWidth="63.0" text="Search" />
+                              <HBox layoutX="136.0" layoutY="415.0" prefHeight="25.0" prefWidth="453.0">
+                                 <children>
+                                    <TextField fx:id="searchBar" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="458.0" promptText="Search" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="445.0" prefWidth="154.0" style="-fx-background-color: black;">
+                           <children>
+                              <Button fx:id="btnClear" layoutX="26.0" layoutY="146.0" mnemonicParsing="false" onAction="#clearBtnOnAction" prefHeight="37.0" prefWidth="111.0" style="-fx-background-color: orange;" text="Clear" textFill="#fbf8be" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="btnUpdate" layoutX="26.0" layoutY="203.0" mnemonicParsing="false" onAction="#edit" prefHeight="37.0" prefWidth="111.0" style="-fx-background-color: brown;" text="Update" textFill="#fbf8be" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="btnAdd" layoutX="26.0" layoutY="90.0" mnemonicParsing="false" onAction="#addButton" prefHeight="37.0" prefWidth="111.0" style="-fx-background-color: olive green;" text="Add" textFill="#fbf8be" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="btnDelete" layoutX="26.0" layoutY="262.0" mnemonicParsing="false" onAction="#deleteBtnOnAction" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #00a8a8;" text="Delete" textFill="#fbf8be" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="26.0">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </Button>
+                              <Button fx:id="btnClose" layoutX="36.0" layoutY="342.0" mnemonicParsing="false" onAction="#closeButtonOnAction" prefHeight="37.0" prefWidth="83.0" style="-fx-background-color: #11509d;" text="Close" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <Label graphicTextGap="3.0" layoutX="14.0" layoutY="49.0" text="First Name" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="13.0" layoutY="104.0" text="Last Name" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="text_Middlename" layoutX="100.0" layoutY="69.0" prefHeight="25.0" prefWidth="119.0" promptText="Middle Name" />
+      <TextField fx:id="text_Lastname" alignment="TOP_LEFT" layoutX="100.0" layoutY="98.0" prefHeight="25.0" prefWidth="119.0" promptText="Last Name" />
+      <Label graphicTextGap="3.0" layoutX="236.0" layoutY="75.0" text="Phone Number" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="237.0" layoutY="49.0" text="Sex" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="text_Firstname" layoutX="100.0" layoutY="40.0" prefHeight="25.0" prefWidth="119.0" promptText="First Name" />
+      <TextField fx:id="text_Sex" layoutX="334.0" layoutY="42.0" prefHeight="25.0" prefWidth="119.0" promptText="Sex" />
+      <TextField fx:id="text_Phonenumber" layoutX="334.0" layoutY="71.0" prefHeight="25.0" prefWidth="119.0" promptText="Phone No." />
+      <TextField fx:id="text_Civilstatus" layoutX="334.0" layoutY="100.0" prefHeight="25.0" prefWidth="119.0" promptText="Civil Status" />
+      <TextField fx:id="text_Age" layoutX="100.0" layoutY="127.0" prefHeight="25.0" prefWidth="119.0" promptText="Age" />
+      <Label graphicTextGap="3.0" layoutX="13.0" layoutY="164.0" text="Birth Date" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="237.0" layoutY="104.0" text="Civil Status" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="237.0" layoutY="135.0" text="House Number" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="237.0" layoutY="167.0" text="Street" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <TextField fx:id="text_Housenumber" layoutX="334.0" layoutY="129.0" prefHeight="25.0" prefWidth="119.0" promptText="House No." />
+      <TextField fx:id="text_Street" layoutX="334.0" layoutY="159.0" prefHeight="25.0" prefWidth="119.0" promptText="Street" />
+      <TextField fx:id="text_Baranggay" layoutX="531.0" layoutY="42.0" prefHeight="25.0" prefWidth="119.0" promptText="Baranggay" />
+      <TextField fx:id="text_City" layoutX="531.0" layoutY="71.0" prefHeight="25.0" prefWidth="119.0" promptText="City" />
+      <TextField fx:id="text_Province" layoutX="531.0" layoutY="100.0" prefHeight="25.0" prefWidth="119.0" promptText="Province" />
+      <Label layoutX="460.0" layoutY="49.0" text="Baranggay" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="460.0" layoutY="75.0" text="City" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label graphicTextGap="3.0" layoutX="459.0" layoutY="104.0" text="Province" textFill="#fbf8be">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
