@@ -1,0 +1,108 @@
+ #hero{
+    background-color: #0C0A0B;
+    background-image: url("images/Background.jpg");
+    background-position: right;
+    background-attachment: scroll;
+    background-size: 90vw 90vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+section {
+    min-height: 100vh; /* Ensure it takes at least the full viewport height */
+    padding: 40px 20px; /* Add some padding for content spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.navbar{
+    font-size: 15px;
+    padding: 3px 20px;
+    background-color: #37231cdf;
+    top: 0;
+    width: 100%;
+    left:0;
+    position: fixed;
+    padding: 40px 0; 
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+    padding: 40px;
+    font-family: "Inter", sans-serif;
+}
+#categories{
+    text-align: center;
+    background-color: #F2E9E4;
+    padding: 40px 20px;
+}
+.image-row{
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    gap: 26px;
+}
+.container {
+    width: 90%; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+}
+.image-row img {
+ max-width: 100%; /* Ensure images don't exceed their container */
+height: auto; /* Maintain aspect ratio */  
+}
+.image-overlay-container {
+position: relative;
+display: inline-block;
+overflow: hidden;
+}
+.image-overlay-container img {
+ display: block;
+ transition: filter 0.3s ease, transform 0.3s ease;
+}
+.image-overlay-container:hover img {
+filter: brightness(1.2);
+transform: scale(1.05);
+}
+
+.overlay-text {
+position: absolute;
+top: 50%; /* Vertically center the container */
+left: 50%; /* Horizontally center the container */
+transform: translate(-50%, -50%); /* Adjust for the container's own size */
+text-align: center;
+color: white;
+padding: 0; /* Adjust padding as needed */
+}
+.overlay-text p {
+margin-bottom: 5px; /* Add some space between the text and the link */
+font-size: 30px;
+}
+.overlay-text a.view-more-overlay {
+color: white;
+font-size: 25px;
+}
+
+.image-overlay-container:hover .overlay-text {
+opacity: 1;
+}
+
+.image-wrapper:hover{
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition:  box-shadow 0.3s ease;
+}
+
+.image-wrapper{
+      overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Make this the positioning context */
+            height: 379px;
+}
+#Bottom{
+    text-align: center;
+    background-color: #37231cdf;
+    padding: 40px 20px;
+}
+#Bottom {
+    min-height: 60vh; /* or use px if you want fixed height, e.g., height: 500px */
+}
